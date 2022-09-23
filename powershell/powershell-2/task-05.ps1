@@ -9,7 +9,7 @@ $permission = [string](Read-Host("[Y/n]"))
 
 if ($permission -like "Y"){
     for ($i = 0; $i -lt $tries; $i++)
-    {Write-output("Try " + ($i + 1) + " to ping: " + $computer)}
+        {Write-output("Try " + ($i + 1) + " to ping: " + $computer)}
 }
 elseif ($permission -like "n"){
     {Permission denied}
