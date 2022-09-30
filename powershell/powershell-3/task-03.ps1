@@ -14,7 +14,7 @@ if (Test-Path -Path $foldername) {
         if ($permission -eq "Yes"){
             New-Item -Path $foldername $filename -ItemType File
         }
-        elseif ($permission -like "n"){
+        elseif ($permission -like "no"){
             {Permission denied}
         }
         else {
