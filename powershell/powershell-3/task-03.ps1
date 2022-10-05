@@ -12,7 +12,7 @@ if (Test-Path -Path $foldername) {
         Write-Host "Sorry, file $filename in folder $foldername does not exist. Create the file $filename?"}
         $permission = [string](Read-Host("Yes/no"));
         if ($permission -eq "Yes"){
-            New-Item -Path $foldername $filename -ItemType File
+            New-Item -Path $foldername -Name "$filename.txt" -ItemType "file"
         }
         elseif ($permission -like "no"){
             {Permission denied}
