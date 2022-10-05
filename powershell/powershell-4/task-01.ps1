@@ -1,3 +1,3 @@
 function Get-FiluInfo {
-    Get-ChildItem $folder | Select-Object Name, Length
+    Get-ChildItem $HOME | Select-Object Name, Length
 }
