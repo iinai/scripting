@@ -1,4 +1,9 @@
-# Create a script that deletes the given files from the users home directory. 
-# Files are passed to the script using a command line arguments (3 values).
-# (Create a empty files in users home folder to test the functionality). 
-# Finally script prints: i deleted the following files: x,y,z
+#!/bin/bash
+
+echo Give names of the three files you want to delete:
+
+read FILENAME1 FILENAME2 FILENAME3
+
+rm /home/user/$FILENAME1 /home/user/$FILENAME2 /home/user/$FILENAME3
+
+echo "Deleted the following files: $FILENAME1, $FILENAME2, $FILENAME3 succesfully"
