@@ -2,7 +2,7 @@
 echo "Give username:"
 
 read USERNAME
-if id $USERNAME > /dev/null 2>&1
+if id -u $USERNAME
 then
     echo "User already exist!"
 else
