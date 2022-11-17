@@ -1,2 +1,10 @@
-# Modify Task 2.
-# Create a script that prints a number of objects in a given directory to the user. The path is asked from the user.
+#!/bin/bash
+
+read -p "Give path name: " PATHNAME
+
+function count_objects {
+  COUNT=$(ls $PATHNAME | wc -l)
+  echo "You have $COUNT objects in $PATHNAME"
+}
+
+count_objects
