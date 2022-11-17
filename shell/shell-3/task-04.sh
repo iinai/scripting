@@ -1,5 +1,24 @@
-# Modify Task 3.
-# User can give unlimited number of paths and given paths are saved in the array.
-# Function takes an array as an argument.
-# Hints:
-# read commands options might be useful or some kind of loop.
+#!/bin/bash
+
+declare -a ARRAY
+
+PATHNAME="path"
+
+until [ ${PATHNAME} = "exit" ]
+do
+    read -p "Give path(s): " PATHNAME
+    if [ ${PATHNAME} != "exit" ]
+        then
+            ARRAY+=(${PATHNAME})
+    fi
+done
+
+function count_objects {
+    for i in $@
+    do
+        local VAR=$( ls ${i} | wc -l )
+        echo "Path ${i} have ${VAR} object(s)"
+    done
+}
+
+count_objects ${ARRAY[@]}
