@@ -1,8 +1,6 @@
 #!/bin/bash
 
-read -p "Give object(s): " list
-
-for object in $list 
+for object in ${@}
 do
     if [ -d ${object} ]
     then
