@@ -1,3 +1,11 @@
-# Create a script that prints 3 random numbers on the terminal and also generates a syslog message with a correlating number for each random number.
-# Log message priority should be user.info.
-# Hints: Special variable $RANDOM
+#!/bin/bash
+
+NUM1=$RANDOM 
+NUM2=$RANDOM 
+NUM3=$RANDOM 
+
+echo "${NUM1} ${NUM2} ${NUM3}"
+
+logger -p user.info "${NUM1}"
+logger -p user.info "${NUM2}"
+logger -p user.info "${NUM3}"
