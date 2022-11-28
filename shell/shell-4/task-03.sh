@@ -1,4 +1,14 @@
-# Create a script that installs the program using apt, based on the user input. (cowsay etc.)
-# If the installation is successfull, tell that to the user and exit normally.
-# If not, inform user and exit with a code 111.
-# Hints: sudo permissions and apt options
+#!/bin/bash
+
+read -p "Give a program to install: " PROGRAM
+
+sudo apt install ${PROGRAM}
+
+if [ $? -eq 0 ]
+    then
+    echo "${PROGRAM} installed succesfully"
+    exit 0
+else
+    echo "Couldn't install ${PROGRAM}"
+    exit 111
+fi
